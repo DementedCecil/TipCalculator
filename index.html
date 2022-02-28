@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="style.css">
+  <title>Frontend Mentor | Tip calculator app</title>
+
+</head>
+<body>
+  
+  <section id="app">
+    <header>
+      <h1>SPLI<br>TTER</h1>
+    </header>
+
+    <div class="input">
+      <label for="bill" id="bill-label">Bill</label>
+      <span class="bill-span hidden">Can't be zero</span>
+      <br>
+      <input type="text" inputmode="numeric" placeholder="0" class="full-width" name="bill_amount" id="bill_amount"><br>
+      <label for="select_tip">Select Tip %</label><br>
+      <div id="tip-grid">
+        <input type="button" class="tip-pc" id="five" value="5">
+        <input type="button" class="tip-pc" id="ten" value="10">
+        <input type="button" class="tip-pc" id="fifteen" value="15">
+        <input type="button" class="tip-pc" id="twenty-five" value="25">
+        <input type="button" class="tip-pc" id="fifty" value="50">
+        <input type="text" class="tip-pc" id="custom" placeholder="Custom">
+      </div>
+      <label for="people" id="people-label">Number of People</label>
+      <span class="people-span hidden">Can't be zero</span>
+      <br>
+      <input type="text" inputmode="numeric" placeholder="0" class="full-width" name="no_of_people" id="people">
+    </div>
+    <div class="output">
+
+      <div class="tip">
+        <div class="wrapper">
+          <div class="tip_output">
+            <div>
+              <p class="amount-label">Tip Amount</p>
+              <p class="byline">/ person</p>
+            </div>
+            <input type="text" inputmode="numeric" placeholder="$0.00" name="tip_amount" id="tip_amount" disabled>
+          </div>
+
+          <div class="total_output">
+            <div>
+              <p class="amount-label">Total</p>
+              <p class="byline">/ person</p>
+            </div>
+            <input type="text" inputmode="numeric" placeholder="$0.00" name="total_amount" id="total_amount" disabled>
+          </div>
+        </div> 
+        <div class="submit-wrapper">
+          <button type="submit" id="reset">RESET</button>
+        </div>
+      </div>  
+    </div>
+  </section> 
+  <script src="index.js"></script>
+</body>
+</html>
