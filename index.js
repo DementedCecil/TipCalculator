@@ -35,8 +35,9 @@ const peopleSpan = document.querySelector('.people-span');
 // Calculation
 function calculate(){
     const tipPercent = document.querySelector('.selected');
-    const tip = billAmount.value * tipPercent.value / 100;
-    const tot = tip + billAmount.value / people.value;
+    const tip = (billAmount.value * tipPercent.value) / 100;
+    const billTot = parseFloat(billAmount.value);
+    const tot = (billTot + tip) / parseFloat(people.value);
 
     if(billAmount.value == 0 & people.value == 0) {
         console.log('fill in all fields');
