@@ -44,6 +44,7 @@ const peopleSpan = document.querySelector('.people-span');
 function calculate(){
     const tipPercent = document.querySelector('.selected');
     const tip = (billAmount.value * tipPercent.value) / 100;
+    const tipShared = (tip / people.value);
     const billTot = parseFloat(billAmount.value);
     const tot = (billTot + tip) / parseFloat(people.value);
 
@@ -79,7 +80,7 @@ function calculate(){
         billSpan.classList.add('hidden');
         peopleSpan.classList.add('hidden');
 
-        tipTotal.setAttribute('value', '$' + tip.toFixed(2));
+        tipTotal.setAttribute('value', '$' + tipShared.toFixed(2));
         total.setAttribute('value', '$' + tot.toFixed(2));
     }   
 }
