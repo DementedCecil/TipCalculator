@@ -1,6 +1,8 @@
 // Variables
 const billAmount = document.getElementById('bill_amount');
+billAmount.addEventListener('input', calculate);
 const people = document.getElementById('people');
+people.addEventListener('input', calculate);
 const tipTotal = document.getElementById('tip_amount');
 const total = document.getElementById('total_amount');
 const reset = document.getElementById('reset');
@@ -11,7 +13,7 @@ const ten = document.getElementById('ten').addEventListener('click', tipSelect);
 const fifteen = document.getElementById('fifteen').addEventListener('click', tipSelect);
 const twentyfive = document.getElementById('twenty-five').addEventListener('click', tipSelect);
 const fifty = document.getElementById('fifty').addEventListener('click', tipSelect);
-const custom = document.getElementById('custom').addEventListener('click', tipSelect);
+const custom = document.getElementById('custom').addEventListener('input', tipSelect);
 
 // Mark only one tip as 'selected'
 function tipSelect(e) {
@@ -19,6 +21,12 @@ function tipSelect(e) {
         tip.classList.remove('selected');
     });
     e.target.classList.add('selected');
+
+    // Clears the 'Custom' input field is a different tip button is selected
+    if(e.currentTarget.id !== 'custom') {
+        document.getElementById('custom').value = '';
+    }
+
     calculate();
 }
 
